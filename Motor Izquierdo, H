@@ -1,0 +1,39 @@
+//Motor Izquierdo
+void setup() {
+  // put your setup code here, to run once:
+pinMode(3, OUTPUT);
+pinMode(5, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  //ADELANTE
+digitalWrite(3, HIGH);
+digitalWrite(5, LOW);
+delay(1955);
+
+digitalWrite(3, LOW);
+digitalWrite(5, LOW);
+delay(100);
+//ATRAS
+digitalWrite(3, LOW);
+digitalWrite(5, HIGH);
+delay(1995);
+
+digitalWrite(3, LOW);
+digitalWrite(5, LOW);
+delay(100);
+//ADELANTE
+digitalWrite(3, HIGH);
+digitalWrite(5, LOW );
+delay(997);
+
+digitalWrite(3, LOW);
+digitalWrite(5, LOW);
+delay(100);
+//ATRAS
+digitalWrite(3, LOW);
+digitalWrite(5, HIGH);
+delay(997);
+
+}
