@@ -1,0 +1,20 @@
+//Code for the QRE1113 Analog board
+//Outputs via the serial terminal - Lower numbers mean more reflected
+int motorpin=3;
+int motorpin2=5;
+int QRE1113_PinI = 0; //connected to analog 0, this will be in the LEFT side of the robot
+int QRE1113_PinD = 1;//connected to analog 1, this will be in the rigth side of the robot
+
+void setup(){
+  Serial.begin(9600);
+}
+
+
+void loop(){
+
+  int QRE_ValueI = analogRead(QRE1113_PinI);
+  Serial.println(QRE_ValueI); 
+  int QRE_ValueD =analogRead(QRE1113_PinD);
+  Serial.println(QRE_ValueD);
+
+}
