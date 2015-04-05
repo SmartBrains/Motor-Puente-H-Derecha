@@ -1,0 +1,36 @@
+//Code for the QRE1113 Analog board
+//Outputs via the serial terminal - Lower numbers mean more reflected
+int motorpin=3;
+int motorpin2=5;
+int QRE1113_PinI = 0; //connected to analog 0, this will be in the LEFT side of the robot
+int QRE1113_PinD = 1;//connected to analog 1, this will be in the rigth side of the robot
+
+void setup(){
+  Serial.begin(9600);
+}
+
+
+void loop(){
+
+  int QRE_ValueI = analogRead(QRE1113_PinI);//With this we can get the value of the QRE of the left
+  Serial.println(QRE_ValueI); 
+  int QRE_ValueD =analogRead(QRE1113_PinD);//With this we can get the value of the QRE of the right
+  Serial.println(QRE_ValueD);
+  
+  if(QRE_ValueI, QRE_ValueD>1000){
+    digitalWrite(motorpin, HIGH);
+    digitalWrite(motorpin2, HIGH);
+    //Here if the values AREN´T black while go foward
+  }
+if(QRE_ValueI<=1000){
+  digitalWrite(motorpin, HIGH);
+  digitalWrite(motorpin2, LOW);
+  //In this case if  the sensor in the LEFT DETECTS black it while turn left
+}
+if(QRE_ValueD<=1000){
+ digitalWrite(motorpin, LOW);
+digitalWrite(motorpin, HIGH);
+//In this case if  the sensor in the RIGHT DETECTS black it while turn right
+}
+
+}
