@@ -1,0 +1,54 @@
+int motorpin1a=3;
+int motorpin1b=4;
+int motorpin2a=5;
+int motorpin2b=6;
+
+int blanco=600; // umbral infrarrojo (color blanco)
+int negro=970;
+int sensor_PinI = 0; //se conecta al analogo O
+int sensor_PinD = 1;//se conecta al analogo 1
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(motorpin1a,OUTPUT);//MOTOR 1 
+  pinMode(motorpin1b,OUTPUT);//MOTOR 1
+  pinMode(motorpin2a,OUTPUT);//MOTOR 2 
+  pinMode(motorpin2b,OUTPUT);//MOTOR 2 
+}
+
+void loop(){
+
+  int sensor_valI = analogRead(sensor_PinI);
+  Serial.println(sensor_valI); 
+  int sensor_valD =analogRead(sensor_PinD);
+  Serial.println(sensor_valD);
+  
+ if(sensor_valI<blanco && sensor_valD<blanco){
+    digitalWrite(motorpin1a, HIGH);
+    digitalWrite(motorpin1b, LOW);
+ digitalWrite(motorpin2a, HIGH);
+digitalWrite(motorpin2b, LOW);
+delay(100);
+  }
+  
+ //si el sensor izquierdo detecta negro, mover el motor derecho hacia adelante 
+if(sensor_valI>=negro){
+  digitalWrite(motorpin1a, HIGH);//lado del sensor avanza
+  digitalWrite(motorpin1b, LOW);
+  digitalWrite(motorpin2a, LOW);//lado contrario se queda igual
+  digitalWrite(motorpin2b, LOW);
+  delay(100);
+}
+
+//si el sensor derecho detecta negro, mover el motor izquierdo hacia adelante 
+if(sensor_valD>=negro){
+  digitalWrite(motorpin2a, HIGH);//lado del sensor avanza
+  digitalWrite(motorpin2b, LOW);
+  digitalWrite(motorpin1a, LOW);//lado contrario se queda igual
+  digitalWrite(motorpin1b, LOW);
+  delay(100);
+}
+}
+//Valor blanco abajo de 680
+
+//negro 990 a 970
