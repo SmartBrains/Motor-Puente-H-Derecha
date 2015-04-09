@@ -1,0 +1,65 @@
+
+
+  
+
+
+int v1=250;
+int v2=225;
+int v3=200;
+int v4=175;
+int v5=150;
+int v6=128;
+int v7=100;
+int v8=75;
+int v9=50;
+int v10=25;
+int v11=0; 
+
+int motora=3;
+int motoro=9;
+int cabeza=1;
+
+void setup() {
+pinMode(motora, OUTPUT);
+pinMode(motoro, OUTPUT);
+pinMode(cabeza, OUTPUT);
+
+}
+void loop() {
+analogWrite(cabeza, v8);
+analogWrite(cabeza, v4);
+delay(300);
+analogWrite(motora, v3);
+analogWrite(motoro, v9);
+delay(3000);
+analogWrite(cabeza, v8);
+analogWrite(cabeza, v4);
+delay(300);
+analogWrite(motora, v9);
+analogWrite(motoro, v3);
+delay(6000);
+analogWrite(cabeza, v8);
+analogWrite(cabeza, v4);
+delay(300);
+analogWrite(motora, v3);
+analogWrite(motora, v3);
+analogWrite(motoro, v9);
+analogWrite(motoro, v9);
+delay(3000);
+analogWrite(cabeza, v8);
+analogWrite(cabeza, v4);
+delay(300);
+analogWrite(motora, v3);
+analogWrite(motoro, v9);
+delay(3000);
+analogWrite(motora, v9);
+analogWrite(motoro, v3);
+delay(3000);
+analogWrite(cabeza, v8);
+analogWrite(cabeza, v4);
+delay(300);
+
+}
+
+  
+  
