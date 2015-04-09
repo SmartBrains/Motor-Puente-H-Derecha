@@ -1,0 +1,41 @@
+int vi=128;
+int ve=120;
+int vu=200;
+int vo=150;
+int motorola=10;
+int motorolo=11;
+int motorito=12;
+int motorote=13;
+
+void setup  (){
+  pinMode (10,OUTPUT);
+  pinMode (11,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+  
+  
+}
+
+void loop (){
+  analogWrite(10,ve);
+  delay(1000);
+  
+  analogWrite(11,vu);
+  delay(2000);
+  analogWrite(11,ve);
+  delay(2000);
+  
+  analogWrite(10,vu);
+  delay(1000);
+  
+  analogWrite(12,vu);
+  delay(1000);
+  analogWrite(12,ve);
+  delay(1000);
+  
+  analogWrite(13,vu);
+  delay(2000);
+  analogWrite(13,ve);s
+  delay(2000);
+  
+}
