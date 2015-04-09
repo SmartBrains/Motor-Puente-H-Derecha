@@ -1,0 +1,100 @@
+int v1=250;
+int v2=150;
+int freno=128;
+int v3=100;
+int v4=0;
+//motores arriba
+int motor1=1;
+int motor2=2;
+//motores abajo
+int motor3=3;
+int motor4=4;
+void setup() {
+  // put your setup code here, to run once:
+pinMode (motor1,OUTPUT);
+pinMode (motor2,OUTPUT);
+pinMode (motor3,OUTPUT);
+pinMode (motor4,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+//Hacia adelante
+analogWrite (motor1,v2);
+analogWrite (motor2,v2);
+analogWrite (motor3,v2);
+analogWrite (motor4,v2);
+delay(2000);
+
+//Detenerse
+analogWrite (motor1,freno);
+analogWrite (motor2,freno);
+analogWrite (motor3,freno);
+analogWrite (motor4,freno);
+delay(100);
+
+//Hacia atras
+analogWrite (motor1,v3);
+analogWrite (motor2,v3);
+analogWrite (motor3,v3);
+analogWrite (motor4,v3);
+delay(3000);
+
+//Detenerse
+analogWrite (motor1,freno);
+analogWrite (motor2,freno);
+analogWrite (motor3,freno);
+analogWrite (motor4,freno);
+delay(100);
+
+//avanzar a su posición original
+analogWrite (motor1,v2);
+analogWrite (motor2,v2);
+analogWrite (motor3,v2);
+analogWrite (motor4,v2);
+delay(1000);
+
+//Detenerse
+analogWrite (motor1,freno);
+analogWrite (motor2,freno);
+analogWrite (motor3,freno);
+analogWrite (motor4,freno);
+delay(100);
+
+//vuelta hacia la izquierda
+analogWrite (motor1,v3);
+analogWrite (motor2,v2);
+analogWrite (motor3,v3);
+analogWrite (motor4,v2);
+delay(2500);
+
+//Detenerse
+analogWrite (motor1,freno);
+analogWrite (motor2,freno);
+analogWrite (motor3,freno);
+analogWrite (motor4,freno);
+delay(100);
+
+//vuelta hacia la derecha
+analogWrite (motor1,v2);
+analogWrite (motor2,v3);
+analogWrite (motor3,v2);
+analogWrite (motor4,v3);
+delay(5000);
+
+//Detenerse
+analogWrite (motor1,freno);
+analogWrite (motor2,freno);
+analogWrite (motor3,freno);
+analogWrite (motor4,freno);
+delay(100);
+
+//vuelta hacia la izquierda
+analogWrite (motor1,v3);
+analogWrite (motor2,v2);
+analogWrite (motor3,v3);
+analogWrite (motor4,v2);
+delay(2500);
+
+
+}
